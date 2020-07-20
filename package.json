@@ -1,0 +1,23 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmsmith1150/Employee-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmsmith1150/Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/tmsmith1150/Employee-Tracker#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
