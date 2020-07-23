@@ -1,12 +1,16 @@
+
 var orm = require("./config/orm.js");
 var inquirer = require("inquirer");
+const Employee = require("./config/employee.js");
+
+
 
 let teamMembers = [];
 
 
-trackEmployees();
+TrackEmployees();
 
- function trackEmployees() 
+ function TrackEmployees() 
 {
     
     
@@ -21,28 +25,74 @@ trackEmployees();
                     "View Employees by Department", 
                     "View All Employees by Manager", 
                     "Add Employee",
-                    "Delete Employee",
-                    "Update Employee"]
+                    ]
                 }
             ]).then (answer =>
                 {
                      
                     switch(answer.operation) {
-                        case "View All Employees":
+                        case "Add Employee":
                             console.log(answer);
-                            selectAllEmployees();
+                            AddEmployee();
                         break;
                     
-                        case "Engineer":
-                            PromptEngineer();
+                        case "View All Employees":
+                            AllEmployees();
                         break;
                     
-                        case "Intern":
-                            PromptIntern();
+                        case "View Employees by Department":
+                            EmployeesByDepartment();
                         break;
                     }
                 })
   }
 
+  function AddEmployee()
+{
+      inquirer.prompt( 
+        [
+            {
+                type: "input",
+                name: "firstName",
+                message: "Employee's first name?"
+            },
+            {
+                type: "input",
+                name: "lastName",
+                message: "Employee's last name?"
+            },
+            {
+                type: "input",
+                name: "roleId",
+                message: "What is employee's position?"
+            },
+            {
+                type: "input",
+                name: "reportsTo",
+                message: "Who is employee's Manager?"
+            },
+            
+        ]
+    ).then(function(answers){
+        const employee = new Employee (answers.firstName, answers.lastName, answers.roleId, answers.reportsTo)
+        console.log(employee)
+        teamMembers.push(employee)
+        TrackEmployees()
+        Save(employee)
+    })
+}
 
+
+function Save(employee){
+    orm.NewEmployee("employee", employee);
+    console.log(employee);
+}
+
+function AllEmployees(){
+    orm.ViewEmployees("employee");
+}
+
+function EmployeesByDepartment(){
+    orm.selectWhere("employee", "department_id", "");
+}
 

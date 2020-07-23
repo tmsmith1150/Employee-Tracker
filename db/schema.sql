@@ -11,7 +11,7 @@ CREATE TABLE department
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE employee_role
+CREATE TABLE role
 (
     id INT PRIMARY KEY,
     title VARCHAR(30),

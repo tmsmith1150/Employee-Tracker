@@ -7,11 +7,11 @@ INSERT INTO department (department_name) VALUES ('Finance');
 INSERT INTO department (department_name) VALUES ('Legal');
 
 
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Salesperson', '30000', '1');
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Sales Lead', '5000', '1');
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Software Engineer', '80000', '2');
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Accountant', '85000', '3');
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Lawyer', '120000', '4');
+INSERT INTO role (id, title, salary, department_id) VALUES (401, 'Salesperson', '30000', 1);
+INSERT INTO role (id, title, salary, department_id) VALUES (402, 'Sales Lead', '5000', 1);
+INSERT INTO role (id, title, salary, department_id) VALUES (435, 'Software Engineer', '80000', 2);
+INSERT INTO role (id, title, salary, department_id) VALUES (466, 'Accountant', '85000', 3);
+INSERT INTO role (id, title, salary, department_id) VALUES (485, 'Lawyer', '120000', 4);
 
 
 
