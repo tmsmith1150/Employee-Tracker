@@ -3,6 +3,7 @@
 
   Links to GitHub: https://tmsmith1150.github.io/Employee-Tracker/.
                    https://github.com/tmsmith1150/Employee-Tracker
+  Link to video: https://drive.google.com/file/d/1UGwywRKMe98TynzNNz22tIDkzxtlVL9j/view
 
 __##Description__
 Application that allows users to add/remove employees, and review employees in database.
