@@ -92,7 +92,17 @@ function AllEmployees(){
     orm.ViewEmployees("employee");
 }
 
-function EmployeesByDepartment(){
-    orm.selectWhere("employee", "department_id", "");
+function EmployeesByDepartment()
+    {
+          inquirer.prompt( 
+            [
+                {
+                    type: "input",
+                    name: "deptId",
+                    message: "What department?"
+                },
+            ]
+          )
+        
 }
 
